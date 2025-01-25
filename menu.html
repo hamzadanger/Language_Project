@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container-nav {
+            max-width: 100%;
+            padding-left: 52px;
+            padding-right: 52px;
+        }
+
+        .first_navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #fff;
+        }
+
+        .nav__wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 163px;
+        }
+
+        .nav__main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 50px;
+        }
+
+        .nav__main ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 50px;
+        }
+
+        .nav__main .nav__link__main {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 28.5px;
+            color: #FE885E;
+        }
+
+        .nav__main ul li a {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 28.5px;
+            color: #5E2B5E;
+            transition: all ease-in-out .4s;
+        }
+
+        .nav__link:hover {
+            color: #FE885E;
+        }
+
+        .nav__btn {
+            padding: 9px 24px 8px 24px;
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 28.5px;
+            border-radius: 10px;
+            background-color: #F4DEC8;
+            color: #5E2B5E;
+            transition: all ease-in-out .4s;
+        }
+
+        .nav__btn:hover {
+            color: #F4DEC8;
+            background-color: #5E2B5E;
+        }
+
+
+
+        #ham {
+            color: #a77a33;
+        }
+
+
+        .navbar {
+            background-color: #333;
+            width: 25%;
+            height: 100vh;
+            display: none;
+        }
+
+        .navbar li:hover {
+            cursor: pointer;
+        }
+
+
+        .navbar li a {
+            color: #d3e3e3;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.6em;
+            transition: all .5s;
+        }
+
+        .navbar li:hover {
+            cursor: pointer;
+            background-color: #ce3939;
+            letter-spacing: 10px;
+        }
+
+        .hamburger {
+            display: none;
+            margin: 0;
+            /* margin-left: 15px; */
+            padding: 0;
+            float: left;
+            transition: opacity .3s;
+        }
+
+        .hamburger:hover {
+            cursor: pointer;
+            opacity: .5;
+        }
+
+        .hamburger .line {
+            width: 50px;
+            height: 5px;
+            background: rgb(236, 66, 66);
+            margin: 8px auto;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .hamburger .line:nth-child(1) {
+            background-color: #FE885E;
+        }
+
+        .hamburger .line:nth-child(2) {
+            background-color: #FE885E;
+        }
+
+        .hamburger .line:nth-child(3) {
+            background-color: #FE885E;
+        }
+
+        .hamburger.isactive .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.isactive .line:nth-child(1) {
+            transform: translateY(13px) rotate(45deg);
+        }
+
+        .hamburger.isactive .line:nth-child(3) {
+            transform: translateY(-13px) rotate(-45deg);
+        }
+
+        .navbar {
+            transition: all 2s ease-in-out;
+        }
+
+        .navbar.active {
+            display: block;
+            animation: fade .5s;
+        }
+
+
+        @keyframes fade {
+            from {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+
+        @media screen and (max-width: 1360px) {
+
+            .navbar {
+                width: 30%;
+            }
+
+            .navbar ul {
+                padding-left: 0%;
+            }
+
+            .navbar li {
+                padding: 3% 0;
+            }
+
+            .navbar li a {
+                font-size: 1.2em;
+            }
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                float: right;
+            }
+            .navbar {
+                background-color: #333;
+                width: 100%;
+                height: 45vh;
+                display: none;
+            }
+
+            .navbar ul {
+                overflow: hidden;
+                list-style-type: none;
+                padding-top: 3%;
+                padding-left: 30%;
+                padding-right: 3%;
+                padding-bottom: 3%;
+                margin: 0;
+            }
+
+            .navbar li {
+                display: block;
+                margin: 0;
+                padding: 14px 20px;
+                width: 100%;
+                transition: background-color .5s;
+            }
+
+            .navbar li:hover {
+                cursor: pointer;
+                background-color: #ce3939;
+            }
+
+
+            .navbar li a {
+                color: #d3e3e3;
+                text-decoration: none;
+                padding: 14px 16px;
+                font-family: 'Poppins';
+                font-size: 1em;
+                transition: all 1s;
+            }
+
+            .navbar li:hover {
+                cursor: pointer;
+                background-color: #ce3939;
+                letter-spacing: 0px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .navbar {
+                background-color: #333;
+                width: 100%;
+                height: 100vh;
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                margin-left: auto;
+                margin-right: 20px;
+            }
+
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .nav__main {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="first_navbar">
+            <div class="container-nav">
+                <div class="nav__wrap">
+                    <a href="#" class="logo"><img src="image/logo-img.svg"></a>
+                    <div class="nav__main">
+                        <ul class="nav__menu">
+                            <li><a href="#" class="nav__link__main">Home</a></li>
+                            <li><a href="#" class="nav__link">Courses</a></li>
+                            <li><a href="#" class="nav__link">About us</a></li>
+                            <li><a href="#" class="nav__link">Teachers</a></li>
+                            <li><a href="#" class="nav__link">Contacts</a></li>
+                        </ul>
+                        <a href="#" class="nav__btn">Call us</a>
+                    </div>
+                    <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger-main">
+            <menu class="navbar">
+                <ul>
+                    <li><a href="#"><b>Home</b></a></li>
+                    <li><a href="#"><b>Courses</b></a></li>
+                    <li><a href="#"><b>About us</b></a></li>
+                    <li><a href="#"><b>Teachers</b></a></li>
+                    <li><a href="#"><b>Contacts</b></a></li>
+                    <a href="#" class="nav__btn">Buy now</a>
+                </ul>
+            </menu>
+        </div>
+    </header>
+    <script>
+        let hamburger = document.querySelector('.hamburger');
+        let menu = document.querySelector('.navbar');
+        let bod = document.querySelector('.container');
+
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('isactive');
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
